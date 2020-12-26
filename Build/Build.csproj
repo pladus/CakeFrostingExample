@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <PackAsTool>true</PackAsTool>
+
+        <!-- Make sure start same folder .NET Core CLI and Visual Studio -->
+        <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>../CakeBinaries</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cake.Docker" Version="0.11.1" />
+        <PackageReference Include="Cake.Frosting" Version="1.0.0-rc0002" />
+    </ItemGroup>
+
+</Project>
